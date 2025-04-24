@@ -27,7 +27,7 @@ class WeeklyEvent<T> {
   });
 
   CalendarEventData<T> toCalendarEvent() {
-    int daysToAdd = weekday.index - WeekDays.monday.index;
+    int daysToAdd = (weekday.index - WeekDays.monday.index + 1) % 7;
     final date =
         CalendarConstants.fixedWeekStart.add(Duration(days: daysToAdd));
 
